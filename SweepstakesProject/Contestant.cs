@@ -9,7 +9,6 @@ namespace SweepstakesProject
     public class Contestant
     {
         //Member variables
-        Contestant contestant = new Contestant();
         public string firstName;
         public string lastName;
         public string emailAddress;

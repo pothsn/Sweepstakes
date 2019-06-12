@@ -9,7 +9,7 @@ namespace SweepstakesProject
     public class SweepstakesStackManager : ISweepstakesManager
     {
         //Member variables
-        Stack<Sweepstakes> sweepstakesStack = new Stack<Sweepstakes>();
+        public Stack<Sweepstakes> sweepstakesStack = new Stack<Sweepstakes>();
 
         //Member methods
 

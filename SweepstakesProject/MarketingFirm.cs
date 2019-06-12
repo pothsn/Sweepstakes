@@ -9,10 +9,18 @@ namespace SweepstakesProject
     public class MarketingFirm
     {
         //Member vairables
+        ISweepstakesManager ssm;
+
+        //Constructor
 
         //Member methods
-
-        //Member methods
+        public void CreateContestant()
+        {
+            Contestant contestant = new Contestant();
+            contestant.firstName = UserInterface.GetFirstName();
+            contestant.lastName = UserInterface.GetLastName();
+            contestant.emailAddress = UserInterface.GetEmailAddress();
+        }
 
     }
 }

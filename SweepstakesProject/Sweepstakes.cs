@@ -9,27 +9,29 @@ namespace SweepstakesProject
     public class Sweepstakes
     {
         //Member variables
-        Dictionary<string, string> test = new Dictionary<string, string>();
-        string name;
+        public Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
+        public string name;
+        Random rng;
 
         //Constructor
         public Sweepstakes(string name)
         {
-            name = "Super Duper Random Sweepstakes";
+            this.name = name;
+            rng = new Random();
         }
 
         //Member methods
         public void RegisterContestant(Contestant contestant) //Adding to dictionary
         {
-            contestant.firstName = UserInterface.GetFirstName();
-            contestant.lastName = UserInterface.GetLastName();
-            contestant.emailAddress = UserInterface.GetEmailAddress();
-            contestant.registrationNumber = UserInterface.GetRegistrationNumber();
+            contestant.registrationNumber = contestants.Count + 1;
+            contestants.Add(contestant.registrationNumber, contestant);            
         }
 
         public string PickWinner() //Using dictionary
         {
-            return "placeholder";
+            int winnerRegistrationNumber = rng.Next(1, contestants.Count + 1);
+            Contestant winner = contestants[winnerRegistrationNumber];
+            return winner.firstName + " " + winner.lastName;
         }
 
         public void PrintContestantInfo(Contestant contestant)

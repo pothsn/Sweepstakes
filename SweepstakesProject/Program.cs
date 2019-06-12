@@ -6,11 +6,27 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            Sweepstakes sweepstakes = new Sweepstakes("testSweepstakes");
+            Contestant testContestant1 = new Contestant();
+            testContestant1.firstName = "nate";
+            Contestant testContestant2 = new Contestant();
+            testContestant2.firstName = "mike";
+            Contestant testContestant3 = new Contestant();
+            testContestant3.firstName = "nevin";
 
+            sweepstakes.contestants.Add(1, testContestant1);
+            sweepstakes.contestants.Add(2, testContestant2);
+            sweepstakes.contestants.Add(3, testContestant3);
+
+            string result = sweepstakes.PickWinner();
+            Console.WriteLine(result);
+            Console.ReadLine();
+
+            
         }
     }
 }

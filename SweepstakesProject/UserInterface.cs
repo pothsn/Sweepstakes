@@ -26,10 +26,10 @@ namespace SweepstakesProject
             return Console.ReadLine();
         }
 
-        public static int GetRegistrationNumber()
-        {
-            Console.WriteLine("Please enter contestant registration number:");
-            return int.Parse(Console.ReadLine());
-        }
+        //public static int GetRegistrationNumber()
+        //{
+        //    Console.WriteLine("Please enter contestant registration number:");
+        //    return int.Parse(Console.ReadLine());
+        //}
     }
 }
