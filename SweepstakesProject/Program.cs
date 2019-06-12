@@ -22,9 +22,11 @@ namespace SweepstakesProject
             sweepstakes.contestants.Add(2, testContestant2);
             sweepstakes.contestants.Add(3, testContestant3);
 
-            string result = sweepstakes.PickWinner();
-            Console.WriteLine(result);
+            string winner = sweepstakes.PickWinner();
+            Console.WriteLine(winner);
             Console.ReadLine();
+
+            sweepstakes.PrintContestantInfo(testContestant1);
 
             
         }

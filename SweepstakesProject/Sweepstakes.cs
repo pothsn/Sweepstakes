@@ -21,13 +21,13 @@ namespace SweepstakesProject
         }
 
         //Member methods
-        public void RegisterContestant(Contestant contestant) //Adding to dictionary
+        public void RegisterContestant(Contestant contestant)
         {
             contestant.registrationNumber = contestants.Count + 1;
             contestants.Add(contestant.registrationNumber, contestant);            
         }
 
-        public string PickWinner() //Using dictionary
+        public string PickWinner()
         {
             int winnerRegistrationNumber = rng.Next(1, contestants.Count + 1);
             Contestant winner = contestants[winnerRegistrationNumber];
@@ -36,7 +36,10 @@ namespace SweepstakesProject
 
         public void PrintContestantInfo(Contestant contestant)
         {
-
+            Console.WriteLine(contestant.firstName);
+            Console.WriteLine(contestant.lastName);
+            Console.WriteLine(contestant.emailAddress);
+            Console.WriteLine(contestant.registrationNumber);
         }
 
 
