@@ -28,6 +28,12 @@ namespace SweepstakesProject
 
             sweepstakes.PrintContestantInfo(testContestant1);
 
+
+            SweepstakesQueueManager thing = new SweepstakesQueueManager();
+            SweepstakesStackManager thing1 = new SweepstakesStackManager();
+
+            MarketingFirm marketingFirm = new MarketingFirm(thing1);
+
             
         }
     }

@@ -9,7 +9,12 @@ namespace SweepstakesProject
     public class MarketingFirm
     {
         //Member vairables
-        ISweepstakesManager ssm;
+        public ISweepstakesManager sweepstakesManager;
+
+        public MarketingFirm(ISweepstakesManager sweepstakesManagers)
+        {
+            sweepstakesManager = sweepstakesManagers;
+        }
 
         //Constructor
 
