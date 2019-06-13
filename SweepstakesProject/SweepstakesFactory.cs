@@ -6,8 +6,25 @@ using System.Threading.Tasks;
 
 namespace SweepstakesProject
 {
-    public static class SweepstakesFactory
+    static class SweepstakesFactory
     {
+        public static ISweepstakesManager SelectSweepstakesManager(string managerType)
+        {
+            ISweepstakesManager manager = null;
+            switch (managerType)
+            {
+                case "Stack":
+                    manager = new SweepstakesStackManager();
+                    break;
+                case "Queue":
+                    manager = new SweepstakesQueueManager();
+                    break;
+                default:
+                    Console.WriteLine("Not a valid manager type.");
+                    break;
+            }
+            return manager;
+        }
 
     }
 }

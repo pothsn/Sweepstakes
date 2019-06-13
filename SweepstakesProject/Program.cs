@@ -22,19 +22,29 @@ namespace SweepstakesProject
             sweepstakes.contestants.Add(2, testContestant2);
             sweepstakes.contestants.Add(3, testContestant3);
 
-            string winner = sweepstakes.PickWinner();
+            Contestant winner = sweepstakes.PickWinner();
             Console.WriteLine(winner);
             Console.ReadLine();
 
             sweepstakes.PrintContestantInfo(testContestant1);
 
 
-            SweepstakesQueueManager thing = new SweepstakesQueueManager();
-            SweepstakesStackManager thing1 = new SweepstakesStackManager();
+            //SweepstakesQueueManager thing = new SweepstakesQueueManager();
+            //SweepstakesStackManager thing1 = new SweepstakesStackManager();
 
-            MarketingFirm marketingFirm = new MarketingFirm(thing1);
+            string managerType = UserInterface.GetSweepstakesManagerType();
+            ISweepstakesManager newManager = SweepstakesFactory.SelectSweepstakesManager(managerType);
 
-            
+            MarketingFirm marketingFirm = new MarketingFirm(newManager);
+
+
+
+
+
+
+
+
+
         }
     }
 }

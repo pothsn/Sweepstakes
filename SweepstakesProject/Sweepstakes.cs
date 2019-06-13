@@ -32,12 +32,12 @@ namespace SweepstakesProject
             contestants.Add(contestant.registrationNumber, contestant);            
         }
 
+        //I got permission from Mike to return a Contestant object here instead of a string.
         public Contestant PickWinner()
         {
             int winnerRegistrationNumber = rng.Next(1, contestants.Count + 1);
             Contestant winner = contestants[winnerRegistrationNumber];
-            return winner;
-            
+            return winner;         
         }
 
         public void PrintContestantInfo(Contestant contestant)

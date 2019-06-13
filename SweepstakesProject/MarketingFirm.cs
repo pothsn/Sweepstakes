@@ -16,7 +16,7 @@ namespace SweepstakesProject
             sweepstakesManager = sweepstakesManagers;
         }
 
-        public void Create()
+        public void CreateSweepstakes()
         {
             Sweepstakes newSweepstakes = new Sweepstakes();
             sweepstakesManager.InsertSweepstakes(newSweepstakes);

@@ -22,7 +22,19 @@ namespace SweepstakesProject
 
         public static string GetEmailAddress()
         {
-            Console.WriteLine("Please enter contestant email address");
+            Console.WriteLine("Please enter contestant email address:");
+            return Console.ReadLine();
+        }
+
+        public static string GetSweepStakesName()
+        {
+            Console.WriteLine("Please enter a sweepstakes name:");
+            return Console.ReadLine();
+        }
+
+        public static string GetSweepstakesManagerType()
+        {
+            Console.WriteLine("Please enter a sweepstakes manager type: Stack or Queue");
             return Console.ReadLine();
         }
     }
