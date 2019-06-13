@@ -48,6 +48,19 @@ namespace SweepstakesProject
             Console.WriteLine(contestant.registrationNumber);
         }
 
-
+        public void NotifyContestants(Contestant winner)
+        {
+            foreach (KeyValuePair<int, Contestant> contestant in contestants)
+            {
+                if (contestant.Key != winner.registrationNumber)
+                {
+                    Console.WriteLine(winner.firstName + " " + winner.lastName + " has won the sweepstakes.");
+                }
+                else
+                {
+                    Console.WriteLine("Congratulations, " + winner.firstName + " " + winner.lastName + ". You have won the sweepstakes!");
+                }
+            }
+        }
     }
 }
