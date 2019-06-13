@@ -16,6 +16,24 @@ namespace SweepstakesProject
             sweepstakesManager = sweepstakesManagers;
         }
 
+        public void Create()
+        {
+            Sweepstakes newSweepstakes = new Sweepstakes();
+            sweepstakesManager.InsertSweepstakes(newSweepstakes);
+        }
+
+        public Sweepstakes GetSweepstakes()
+        {          
+            return sweepstakesManager.GetSweepstakes();
+        }
+
+        public void Run()
+        {
+            Sweepstakes ss = GetSweepstakes();
+            Contestant winner = ss.PickWinner();
+            ss.PrintContestantInfo(winner);
+        }
+
         //Constructor
 
         //Member methods
@@ -26,6 +44,5 @@ namespace SweepstakesProject
             contestant.lastName = UserInterface.GetLastName();
             contestant.emailAddress = UserInterface.GetEmailAddress();
         }
-
     }
 }

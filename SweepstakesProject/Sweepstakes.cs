@@ -14,6 +14,11 @@ namespace SweepstakesProject
         Random rng;
 
         //Constructor
+        public Sweepstakes()
+        {
+            name = null;
+            rng = new Random();
+        }
         public Sweepstakes(string name)
         {
             this.name = name;
@@ -27,11 +32,12 @@ namespace SweepstakesProject
             contestants.Add(contestant.registrationNumber, contestant);            
         }
 
-        public string PickWinner()
+        public Contestant PickWinner()
         {
             int winnerRegistrationNumber = rng.Next(1, contestants.Count + 1);
             Contestant winner = contestants[winnerRegistrationNumber];
-            return winner.firstName + " " + winner.lastName;
+            return winner;
+            
         }
 
         public void PrintContestantInfo(Contestant contestant)
